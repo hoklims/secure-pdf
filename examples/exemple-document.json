@@ -1,0 +1,247 @@
+{
+  "spdf": {
+    "version": "1.0.0",
+    "created": "2025-07-24T08:42:59.946Z",
+    "id": "c7aa75f0-66a6-4f4a-8d36-232574bbdf7f"
+  },
+  "metadata": {
+    "title": "Document Exemple SecurePDF",
+    "author": "Générateur de Test",
+    "subject": "Démonstration du format SPDF",
+    "keywords": [
+      "exemple",
+      "test",
+      "sécurisé",
+      "demo"
+    ],
+    "permissions": {
+      "print": true,
+      "copy": false,
+      "modify": false,
+      "annotate": true
+    }
+  },
+  "security": {
+    "encryption": {
+      "algorithm": "AES-256-GCM",
+      "key_derivation": "PBKDF2",
+      "salt": "MC40NzIyODI4Mzk2NDc5ODU0NQ==",
+      "iterations": 100000
+    },
+    "signature": {
+      "algorithm": "RSA-PSS",
+      "hash_algorithm": "SHA3-256",
+      "certificate": "demo-cert",
+      "signature": "demo-signature",
+      "timestamp": "2025-07-24T08:42:59.947Z"
+    },
+    "content_hashes": {
+      "text": "demo-text-hash",
+      "images": [],
+      "forms": "demo-forms-hash"
+    }
+  },
+  "content": {
+    "pages": [
+      {
+        "id": "d79fcf1d-6270-4294-b5b0-d358fe39f583",
+        "width": 595.28,
+        "height": 841.89,
+        "elements": [
+          {
+            "type": "text",
+            "id": "2a5d58d9-5846-41ee-a782-5a62c3c517da",
+            "x": 72,
+            "y": 750,
+            "width": 336,
+            "height": 20,
+            "content": "RG9jdW1lbnQgU2VjdXJlUERGIC0gRXhlbXBsZQ==",
+            "style": {
+              "font": "Arial",
+              "size": 20,
+              "color": "#000000",
+              "bold": true,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "58f35dc6-ffba-47cf-b39e-4266d8ea1a1a",
+            "x": 72,
+            "y": 710,
+            "width": 381.59999999999997,
+            "height": 12,
+            "content": "Q2VjaSBlc3QgdW4gZG9jdW1lbnQgZGUgZMOpbW9uc3RyYXRpb24gZHUgZm9ybWF0IFNQREYu",
+            "style": {
+              "font": "Arial",
+              "size": 12,
+              "color": "#333333",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "b7fec3d7-631b-4a4d-b77e-594caedb0e1b",
+            "x": 72,
+            "y": 670,
+            "width": 252,
+            "height": 14,
+            "content": "Q2FyYWN0w6lyaXN0aXF1ZXMgZGUgc8OpY3VyaXTDqSA6",
+            "style": {
+              "font": "Arial",
+              "size": 14,
+              "color": "#000000",
+              "bold": true,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "15d672f4-5523-4f9e-a126-398073fdb3e7",
+            "x": 90,
+            "y": 640,
+            "width": 270.59999999999997,
+            "height": 11,
+            "content": "4oCiIENoaWZmcmVtZW50IEFFUy0yNTYtR0NNIHBvdXIgbGUgY29udGVudQ==",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#555555",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "d288b887-1610-47fa-bc68-2380289977b3",
+            "x": 90,
+            "y": 620,
+            "width": 290.4,
+            "height": 11,
+            "content": "4oCiIFNpZ25hdHVyZXMgbnVtw6lyaXF1ZXMgUlNBLVBTUyBvYmxpZ2F0b2lyZXM=",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#555555",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "dc159515-2dc5-4a74-bb5c-a695708841c9",
+            "x": 90,
+            "y": 600,
+            "width": 316.8,
+            "height": 11,
+            "content": "4oCiIFZhbGlkYXRpb24gc3RyaWN0ZSBkZSBsYSBzdHJ1Y3R1cmUgZHUgZG9jdW1lbnQ=",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#555555",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "93db4d4a-db54-4d41-8b8b-ea19396f9147",
+            "x": 90,
+            "y": 580,
+            "width": 257.4,
+            "height": 11,
+            "content": "4oCiIEF1ZGl0IHRyYWlsIGNvbXBsZXQgZGVzIG1vZGlmaWNhdGlvbnM=",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#555555",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "86defa87-8ea2-49c1-af0b-39f50f149102",
+            "x": 90,
+            "y": 560,
+            "width": 244.2,
+            "height": 11,
+            "content": "4oCiIEF1Y3VuZSBleMOpY3V0aW9uIGRlIGNvZGUgYXJiaXRyYWlyZQ==",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#555555",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "a32cd043-0d3e-487e-8f51-b3e84b1c81a8",
+            "x": 72,
+            "y": 520,
+            "width": 218.4,
+            "height": 14,
+            "content": "QXZhbnRhZ2VzIGR1IGZvcm1hdCBTUERGIDo=",
+            "style": {
+              "font": "Arial",
+              "size": 14,
+              "color": "#000000",
+              "bold": true,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "39ac97cf-2f16-4680-8eb1-3af0fb3f2bcc",
+            "x": 72,
+            "y": 490,
+            "width": 1069.2,
+            "height": 11,
+            "content": "Q29udHJhaXJlbWVudCBhdXggZm9ybWF0cyB0cmFkaXRpb25uZWxzLCBTUERGIGVtcMOqY2hlIGwnaW5qZWN0aW9uIGRlIGNvZGUgbWFsdmVpbGxhbnQgdG91dCBlbiBjb25zZXJ2YW50IGxlcyBmb25jdGlvbm5hbGl0w6lzIGVzc2VudGllbGxlcyBkJ3VuIGRvY3VtZW50IG51bcOpcmlxdWUu",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#666666",
+              "bold": false,
+              "italic": false
+            }
+          },
+          {
+            "type": "text",
+            "id": "1a67c7d4-8130-4728-b155-12d97be3f3d6",
+            "x": 72,
+            "y": 460,
+            "width": 719.4,
+            "height": 11,
+            "content": "Q2hhcXVlIGRvY3VtZW50IGVzdCBzaWduw6kgbnVtw6lyaXF1ZW1lbnQgZXQgcGV1dCDDqnRyZSBjaGlmZnLDqSBwb3VyIGdhcmFudGlyIGwnaW50w6lncml0w6kgZXQgbGEgY29uZmlkZW50aWFsaXTDqS4=",
+            "style": {
+              "font": "Arial",
+              "size": 11,
+              "color": "#666666",
+              "bold": false,
+              "italic": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "audit_trail": [
+    {
+      "timestamp": "2025-07-24T08:42:59.947Z",
+      "action": "created",
+      "user": "demo-fingerprint",
+      "previous_hash": null,
+      "hash": ""
+    },
+    {
+      "timestamp": "2025-07-24T08:42:59.948Z",
+      "action": "modified",
+      "user": "demo-fingerprint",
+      "previous_hash": "",
+      "hash": "demo-document-hash"
+    }
+  ]
+}

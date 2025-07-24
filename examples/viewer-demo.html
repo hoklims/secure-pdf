@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecurePDF Viewer Demo</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSys        ];
+
+      currentDocument = sampleSpdf;
+      console.log('Document créé:', sampleSpdf);
+      renderDocument(sampleSpdf);
+      showStatus('Document d\'exemple créé avec succès!', 'success');
+      } catch (error) {
+        console.error('Erreur lors de la création du document:', error);
+        showStatus('Erreur lors de la création du document: ' + error.message, 'error');
+      }
+    }t, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #eee;
+    }
+    .demo-info {
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      border-left: 4px solid #2196f3;
+    }
+    .file-input {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 6px;
+    }
+    .file-input label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .file-input input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .viewer-container {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+    .error {
+      color: #d32f2f;
+      background: #ffebee;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+    .success {
+      color: #388e3c;
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+    .sample-buttons {
+      margin-bottom: 20px;
+    }
+    .sample-buttons button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      background: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .sample-buttons button:hover {
+      background: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔒 SecurePDF Viewer Demo</h1>
+      <p>Visualiseur sécurisé pour documents SPDF</p>
+    </div>
+
+    <div class="demo-info">
+      <h3>À propos de SecurePDF</h3>
+      <p>SecurePDF (SPDF) est un format de document sécurisé conçu pour prévenir l'injection de code malveillant et garantir l'intégrité des documents.</p>
+      <ul>
+        <li>🛡️ Pas d'exécution de code arbitraire</li>
+        <li>🔐 Chiffrement end-to-end AES-256-GCM</li>
+        <li>✍️ Signatures numériques obligatoires</li>
+        <li>🔍 Validation stricte du contenu</li>
+        <li>📝 Audit trail des modifications</li>
+      </ul>
+    </div>
+
+    <div class="sample-buttons">
+      <button onclick="createSampleDocument()">Créer un document d'exemple</button>
+      <button onclick="loadSampleFile()">Charger fichier d'exemple</button>
+      <button onclick="showSpecification()">Voir la spécification</button>
+    </div>
+
+    <div class="file-input">
+      <label for="spdf-file">Charger un fichier SPDF :</label>
+      <input type="file" id="spdf-file" accept=".spdf,.json" onchange="loadSpdfFile(event)">
+      
+      <label for="password" style="margin-top: 15px;">Mot de passe (si nécessaire) :</label>
+      <input type="password" id="password" placeholder="Entrez le mot de passe">
+    </div>
+
+    <div id="status"></div>
+
+    <div class="viewer-container" id="viewer-container">
+      <div style="padding: 40px; text-align: center; color: #666;">
+        <h3>Aucun document chargé</h3>
+        <p>Sélectionnez un fichier SPDF pour commencer la visualisation sécurisée.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentDocument = null;
+
+    function showStatus(message, type = 'info') {
+      const statusDiv = document.getElementById('status');
+      statusDiv.innerHTML = `<div class="${type}">${message}</div>`;
+      setTimeout(() => {
+        statusDiv.innerHTML = '';
+      }, 5000);
+    }
+
+    function createSampleDocument() {
+      try {
+        console.log('Création du document d\'exemple...');
+        
+        const sampleSpdf = {
+        spdf: {
+          version: "1.0.0",
+          created: new Date().toISOString(),
+          id: "sample-document-id"
+        },
+        metadata: {
+          title: "Document d'exemple SecurePDF",
+          author: "Système de démonstration",
+          subject: "Exemple de document sécurisé",
+          keywords: ["demo", "sécurisé", "exemple"],
+          permissions: {
+            print: true,
+            copy: false,
+            modify: false,
+            annotate: true
+          }
+        },
+        security: {
+          encryption: {
+            algorithm: "AES-256-GCM",
+            key_derivation: "PBKDF2",
+            salt: "demo-salt",
+            iterations: 100000
+          },
+          signature: {
+            algorithm: "RSA-PSS",
+            hash_algorithm: "SHA3-256",
+            certificate: "demo-certificate",
+            signature: "demo-signature",
+            timestamp: new Date().toISOString()
+          },
+          content_hashes: {
+            text: "demo-text-hash",
+            images: [],
+            forms: "demo-forms-hash"
+          }
+        },
+        content: {
+          pages: [
+            {
+              id: "page-1",
+              width: 595.28,
+              height: 841.89,
+              elements: [
+                {
+                  type: "text",
+                  id: "title",
+                  x: 72,
+                  y: 720,
+                  width: 400,
+                  height: 30,
+                  content: "Document SecurePDF d'exemple",
+                  style: {
+                    font: "Arial",
+                    size: 24,
+                    color: "#000000",
+                    bold: true,
+                    italic: false
+                  }
+                },
+                {
+                  type: "text",
+                  id: "content",
+                  x: 72,
+                  y: 680,
+                  width: 450,
+                  height: 20,
+                  content: "Ceci est un exemple de document au format SecurePDF.",
+                  style: {
+                    font: "Arial",
+                    size: 12,
+                    color: "#333333",
+                    bold: false,
+                    italic: false
+                  }
+                },
+                {
+                  type: "text",
+                  id: "features",
+                  x: 72,
+                  y: 620,
+                  width: 450,
+                  height: 100,
+                  content: "Caractéristiques de sécurité :\n• Chiffrement AES-256-GCM\n• Signatures numériques RSA-PSS\n• Validation stricte du contenu\n• Audit trail complet",
+                  style: {
+                    font: "Arial",
+                    size: 11,
+                    color: "#555555",
+                    bold: false,
+                    italic: false
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        audit_trail: [
+          {
+            timestamp: new Date().toISOString(),
+            action: "created",
+            user: "demo-user-fingerprint",
+            previous_hash: null,
+            hash: "demo-document-hash"
+          }
+        ]
+      };
+
+      currentDocument = sampleSpdf;
+      renderDocument(sampleSpdf);
+      showStatus('Document d\'exemple créé avec succès!', 'success');
+    }
+
+    function loadSampleFile() {
+      fetch('./exemple-document.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Fichier d\'exemple non trouvé. Exécutez d\'abord: node examples/generate-sample.js');
+          }
+          return response.json();
+        })
+        .then(spdfData => {
+          currentDocument = spdfData;
+          renderDocument(spdfData);
+          showStatus('Fichier d\'exemple chargé avec succès!', 'success');
+        })
+        .catch(error => {
+          showStatus('Erreur: ' + error.message, 'error');
+          console.error('Erreur lors du chargement du fichier d\'exemple:', error);
+        });
+    }
+
+    function loadSpdfFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const spdfData = JSON.parse(e.target.result);
+          
+          // Validation basique
+          if (!spdfData.spdf || !spdfData.metadata || !spdfData.content) {
+            throw new Error('Format SPDF invalide');
+          }
+
+          currentDocument = spdfData;
+          renderDocument(spdfData);
+          showStatus('Document SPDF chargé avec succès!', 'success');
+        } catch (error) {
+          showStatus('Erreur lors du chargement: ' + error.message, 'error');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function renderDocument(document) {
+      try {
+        console.log('Rendu du document:', document);
+        const container = document.getElementById('viewer-container');
+        
+        if (!container) {
+          throw new Error('Container viewer-container non trouvé');
+        }
+      
+      // Header avec informations de sécurité
+      const header = `
+        <div style="background: #f8f9fa; border-bottom: 1px solid #ddd; padding: 12px 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="background: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500;">🔒 Sécurisé</span>
+              <span style="margin-left: 12px; font-weight: 500;">${document.metadata.title}</span>
+            </div>
+            <div>
+              <span style="font-size: 12px; color: #6c757d;">Page 1 sur ${document.content.pages.length}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Contenu de la page
+      const page = document.content.pages[0];
+      let pageContent = `
+        <div style="padding: 20px; background: #f5f5f5;">
+          <div style="width: ${page.width}px; height: ${page.height}px; background: white; margin: 0 auto; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      `;
+
+      // Rendu des éléments
+      page.elements.forEach(element => {
+        if (element.type === 'text') {
+          let content = element.content;
+          
+          // Tenter de décoder le base64 si le contenu semble encodé
+          try {
+            if (content && content.match(/^[A-Za-z0-9+/]+=*$/)) {
+              const decoded = atob(content);
+              // Vérifier si le décodage donne du texte lisible
+              if (decoded && decoded.length > 0 && decoded.length < content.length * 2) {
+                content = decoded;
+              }
+            }
+          } catch (e) {
+            // Si le décodage échoue, garder le contenu original
+          }
+          
+          content = content.replace(/\n/g, '<br>');
+          pageContent += `
+            <div style="
+              position: absolute;
+              left: ${element.x}px;
+              top: ${element.y}px;
+              width: ${element.width}px;
+              height: ${element.height}px;
+              font-family: ${element.style?.font || 'Arial'};
+              font-size: ${element.style?.size || 12}px;
+              color: ${element.style?.color || '#000000'};
+              font-weight: ${element.style?.bold ? 'bold' : 'normal'};
+              font-style: ${element.style?.italic ? 'italic' : 'normal'};
+              overflow: hidden;
+              user-select: ${document.metadata.permissions.copy ? 'text' : 'none'};
+            ">${content}</div>
+          `;
+        }
+      });
+
+      pageContent += `
+          </div>
+        </div>
+      `;
+
+      // Panneau de sécurité
+      const securityPanel = `
+        <div style="background: #f8f9fa; border-top: 1px solid #ddd; padding: 16px;">
+          <h4 style="margin: 0 0 12px 0; font-size: 14px; color: #495057;">Sécurité du document</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span>Imprimer:</span>
+              <span style="color: ${document.metadata.permissions.print ? '#28a745' : '#dc3545'}; font-weight: 500;">
+                ${document.metadata.permissions.print ? '✓' : '✗'}
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span>Copier:</span>
+              <span style="color: ${document.metadata.permissions.copy ? '#28a745' : '#dc3545'}; font-weight: 500;">
+                ${document.metadata.permissions.copy ? '✓' : '✗'}
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span>Modifier:</span>
+              <span style="color: ${document.metadata.permissions.modify ? '#28a745' : '#dc3545'}; font-weight: 500;">
+                ${document.metadata.permissions.modify ? '✓' : '✗'}
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px;">
+              <span>Annoter:</span>
+              <span style="color: ${document.metadata.permissions.annotate ? '#28a745' : '#dc3545'}; font-weight: 500;">
+                ${document.metadata.permissions.annotate ? '✓' : '✗'}
+              </span>
+            </div>
+          </div>
+          <div style="font-size: 12px; color: #6c757d;">
+            <p style="margin: 4px 0;"><strong>Signé par:</strong> ${document.metadata.author}</p>
+            <p style="margin: 4px 0;"><strong>Créé:</strong> ${new Date(document.spdf.created).toLocaleString()}</p>
+            <p style="margin: 4px 0;"><strong>Chiffrement:</strong> ${document.security.encryption.algorithm}</p>
+            <p style="margin: 4px 0;"><strong>Signature:</strong> ${document.security.signature.algorithm}</p>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = header + pageContent + securityPanel;
+      console.log('Document rendu avec succès');
+      } catch (error) {
+        console.error('Erreur lors du rendu:', error);
+        showStatus('Erreur lors du rendu: ' + error.message, 'error');
+      }
+    }
+
+    function showSpecification() {
+      window.open('../spec/SPDF-Specification.md', '_blank');
+    }
+
+    // Charger un document d'exemple au démarrage
+    window.onload = function() {
+      showStatus('Visualiseur SecurePDF chargé. Créez ou chargez un document pour commencer.', 'success');
+    };
+  </script>
+</body>
+</html>
