@@ -11,13 +11,23 @@
     "packages/*"
   ],
   "scripts": {
+    "setup": "node setup.js",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "test": "turbo run test",
+    "test:security": "turbo run test:security",
+    "test:coverage": "turbo run test --coverage",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint --fix",
     "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "type-check": "turbo run type-check"
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "type-check": "turbo run type-check",
+    "validate": "npm run type-check && npm run lint && npm run test",
+    "example:create": "node examples/create-example-document.js",
+    "example:validate": "node examples/validate-spdf.js",
+    "example:compare": "node examples/compare-formats.js",
+    "viewer": "open examples/viewer-demo.html"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

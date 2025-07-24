@@ -1,8 +1,8 @@
 {
   "spdf": {
     "version": "1.0.0",
-    "created": "2025-07-24T11:40:51.108Z",
-    "id": "2ce4e575762fe8277c80f3411a75d800",
+    "created": "2025-07-24T12:33:44.326Z",
+    "id": "6b1168b8953aabaf4f93be56f9ec0b09",
     "generator": "SecurePDF Example Generator v1.0.0"
   },
   "metadata": {
@@ -18,8 +18,8 @@
     ],
     "creator": "SecurePDF Core Library",
     "producer": "SecurePDF v1.0.0",
-    "creation_date": "2025-07-24T11:40:51.108Z",
-    "modification_date": "2025-07-24T11:40:51.108Z",
+    "creation_date": "2025-07-24T12:33:44.326Z",
+    "modification_date": "2025-07-24T12:33:44.326Z",
     "language": "fr-FR",
     "permissions": {
       "print": true,
@@ -36,16 +36,16 @@
     "encryption": {
       "algorithm": "AES-256-GCM",
       "key_derivation": "PBKDF2",
-      "salt": "Dspz9Z0/rLpkd+rPepeGbKUgLbrUYIn3WdTJdsG7KP0=",
+      "salt": "AutDUzLTLwq3fSA870h+gbexjaY5J4XW74VE2msNC3U=",
       "iterations": 100000,
-      "iv": "c4Lgn8mQ+28+jeO8cVAKUQ=="
+      "iv": "/87Z7JC9ZD+ljRkbZulSTg=="
     },
     "signature": {
       "algorithm": "RSA-PSS",
       "hash_algorithm": "SHA3-256",
       "certificate": "-----BEGIN CERTIFICATE-----\nMIID...DEMO_CERTIFICATE...xyz=\n-----END CERTIFICATE-----",
-      "signature": "85jD8FWvx2WUHT+fleGN0DeY9RwQbIcj7/S3dgF6ONjnjSYbr8BJACKmfvfRLqjtRs/JpQHQ5+5JyoxaeiK3r01+tacytF7RPoymjfIacgG522o2r0xSJIzRj19aIw00oXxmV5qPBy1PhTWgsDwZuuwpnhdr/aQcUTeFzZZfnDgTDNX2bOKgaUqlcYQwbBPHaHzfrHG/mE8vlsUjip7GjaT6xhAznHAaP2ckpjedbzu5DlK63GYXuHFjwldas0sFJ4OcbxlQP4Gd8fLnx1oCuG9M6IZMJfRT6a/5SYK8UHODa78WG3sgGt9b+/c/3L21GXNKQ6HgombaWqGNCmSl7A==",
-      "timestamp": "2025-07-24T11:40:51.108Z",
+      "signature": "761G5ML3RFNZWI5EkFMEFJNCsZQvNuJch93+Ulql2N9YKRj0ChTxszpGTkTnBCkrUT3dlZMlqo5JgeDiUQvDL9MkGS7RnGhVQCrdPrsQ7Qyvw4FZBVEzDXzPUSFdTXgad2X33GH0PZ/EbXs+iqwJNsj8udpyYCNd5WrEoRnIOhxhxn4dbSpp6od6UlrIx/A6ldc5/SJ9gMaF7CTyj3BwMBYBOojGNf24KGZn3qK8372UC1Br1Y2leDs8XgY6lqZSSIDDOUkY2RIYz+Dj5H11gRedx52wpvCJTKWa+pHaxcGCBqMtxYB7U5/p9DF0X5qFhKZ0bogq+ncQtwdGCUBPuw==",
+      "timestamp": "2025-07-24T12:33:44.326Z",
       "tsa_url": "https://tsa.securepdf.org",
       "certificate_chain": [
         "Demo Root CA Certificate",
@@ -53,11 +53,11 @@
       ]
     },
     "content_hashes": {
-      "text": "b3fcc6d1a2908e7c9c8627139ee4e2e1202892fa28cc61387a08089577afef97",
+      "text": "8354da4c3f13482b90a16e95f2a9799fac20f072e9f8686e22717151c075ba14",
       "images": [],
       "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
-    "integrity_check": "3f273391bd7a01f90a8c865ba1ebbd5cc6114c59b0c9f78f7a76ff740118216e"
+    "integrity_check": "15a8473588b36c569ed383ce3b225a422a2b9bb8f8ee19c504b543f122d69514"
   },
   "content": {
     "pages": [
@@ -189,7 +189,7 @@
             "y": 100,
             "width": 450,
             "height": 40,
-            "content": "Q2UgZG9jdW1lbnQgYSDDqXTDqSBnw6luw6lyw6kgbGUgMjQvMDcvMjAyNSDDoCAxMzo0MDo1MQpGb3JtYXQgU1BERiB2MS4wLjAgLSBTZWN1cmVQREYgUHJvamVjdA==",
+            "content": "Q2UgZG9jdW1lbnQgYSDDqXTDqSBnw6luw6lyw6kgbGUgMjQvMDcvMjAyNSDDoCAxNDozMzo0NApGb3JtYXQgU1BERiB2MS4wLjAgLSBTZWN1cmVQREYgUHJvamVjdA==",
             "style": {
               "font": "Arial",
               "size": 8,
@@ -233,28 +233,28 @@
   },
   "audit_trail": [
     {
-      "timestamp": "2025-07-24T11:40:51.108Z",
+      "timestamp": "2025-07-24T12:33:44.326Z",
       "action": "document_created",
       "user": "system",
       "details": "Document SPDF créé avec le générateur d'exemple",
       "previous_hash": null,
-      "hash": "7884e93e7b437d12541101b73b6e17ea553ad6548113b492a1b9dda038a60c7a"
+      "hash": "a5c06e925ecab10395cc4d74f7adf3b27f8089e4b1b9ecfaf70692027552edf3"
     },
     {
-      "timestamp": "2025-07-24T11:40:51.108Z",
+      "timestamp": "2025-07-24T12:33:44.326Z",
       "action": "content_added",
       "user": "system",
       "details": "Ajout du contenu de la page 1 (9 éléments)",
-      "previous_hash": "7884e93e7b437d12541101b73b6e17ea553ad6548113b492a1b9dda038a60c7a",
-      "hash": "37741ec1ea69d4eda0e1f47ccfcbebf7fa8b7a77258e7f021df769bde9071c41"
+      "previous_hash": "a5c06e925ecab10395cc4d74f7adf3b27f8089e4b1b9ecfaf70692027552edf3",
+      "hash": "3ddab50ccdb6e0b15f778b53339deed60c5155d07eb64319bc12f19c400c9396"
     },
     {
-      "timestamp": "2025-07-24T11:40:51.108Z",
+      "timestamp": "2025-07-24T12:33:44.326Z",
       "action": "security_applied",
       "user": "system",
       "details": "Application du chiffrement et signature numérique",
-      "previous_hash": "37741ec1ea69d4eda0e1f47ccfcbebf7fa8b7a77258e7f021df769bde9071c41",
-      "hash": "f9c4bd10c005ec19081d4398f0755f6aea1b40d12fa13783504c01d7dd9528d4"
+      "previous_hash": "3ddab50ccdb6e0b15f778b53339deed60c5155d07eb64319bc12f19c400c9396",
+      "hash": "d08f1fba9c4570bd2ed0ae802dd53b06138aa181ccfcfcc6866f8cd7d479f193"
     }
   ],
   "extensions": {
