@@ -1,6 +1,8 @@
 # SecurePDF (SPDF) 🔒
 
-A secure document format designed to prevent malicious code injection, ensure document integrity, and provide end-to-end encryption. SecurePDF is a modern alternative to traditional PDF with enhanced security features.
+An experimental TypeScript prototype for a JSON-based document format, with parsing, validation, cryptographic operations and a React viewer.
+
+> **Status: experimental prototype.** This repository is not a production-ready PDF replacement. The feature list and historical project notes describe intended properties and implementation work, not an independently validated security guarantee. Production use would require a separate security review and validation.
 
 ## 🛡️ Key Security Features
 
@@ -34,7 +36,7 @@ secure-pdf/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/secure-pdf.git
+git clone https://github.com/hoklims/secure-pdf.git
 cd secure-pdf
 
 # Install dependencies
