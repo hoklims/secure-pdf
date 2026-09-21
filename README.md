@@ -4,7 +4,9 @@ An experimental TypeScript prototype for a JSON-based document format, with pars
 
 > **Status: experimental prototype.** This repository is not a production-ready PDF replacement. The feature list and historical project notes describe intended properties and implementation work, not an independently validated security guarantee. Production use would require a separate security review and validation.
 
-## 🛡️ Key Security Features
+## 🛡️ Security Design Goals
+
+These are intended properties, not independently verified security guarantees.
 
 - **No Arbitrary Code Execution**: Complete elimination of PostScript, JavaScript, or embedded executables
 - **Mandatory Digital Signatures**: RSA-PSS signatures with certificate chains for document authenticity
@@ -316,8 +318,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - [Specification](./spec/SPDF-Specification.md)
-- [API Documentation](./docs/api.md)
-- [Security Guide](./docs/security.md)
 - [Examples](./examples/)
 
 ## ⚠️ Security Disclosure
@@ -326,4 +326,4 @@ If you discover a security vulnerability, please send an email to security@secur
 
 ---
 
-**SecurePDF** - Redefining document security for the modern age. 🔒📄
+**SecurePDF** — experimental document-format prototype.
